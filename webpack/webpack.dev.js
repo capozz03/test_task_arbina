@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.name': JSON.stringify('Vishwas')
+      'process.env.DEVELOPMENT': JSON.stringify(process.env.DEVELOPMENT)
     }),
     new ReactRefreshWebpackPlugin(),
   ]
