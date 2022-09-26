@@ -19,6 +19,17 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.module.css$/,
+        use: [
+          { 
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
       },
