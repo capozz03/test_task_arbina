@@ -1,9 +1,18 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+function srcPath(subdir) {
+  return path.join(__dirname, '..', "src", subdir);
+}
+
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
+    alias: {
+      shared: srcPath('shared'),
+      components: srcPath('components'),
+      pages: srcPath('pages'),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
